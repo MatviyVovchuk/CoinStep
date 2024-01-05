@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">CoinStep</string>
+    <string name="step_counter_channel">Step counter</string>
+    <plurals name="step_count">
+        <item quantity="one">%d step today</item>
+        <item quantity="other">%d steps today</item>
+    </plurals>
+    <string name="step_counter_stats">%1$d kcal · %2$.2f km · %3$d%% of your daily goal</string>
+    <string name="steps">steps</string>
+    <string name="step_goal">Goal %s</string>
+
+    <!-- Onboarding -->
+    <string name="action_continue">Continue</string>
+    <string name="revoke_permission_rationale">You can revoke this permission in system settings, but keep in mind the app will stop working</string>
+    <string name="data_consent">All your data is stored locally on your device and will not be shared with anyone</string>
+
+    <string name="allow_activity_recognition">Allow activity recognition</string>
+    <string name="activity_recognition_rationale">This permission is required to detect and count the steps you take.</string>
+
+    <!-- Navigation -->
+    <string name="forest">Money</string>
+    <string name="tree">Coin</string>
+    <string name="stats">Stats</string>
+
+    <!-- Forest -->
+    <plurals name="trees">
+        <item quantity="one">coin</item>
+        <item quantity="other">coins</item>
+    </plurals>
+
+    <!-- Progress -->
+    <string name="carbon_dioxide_saved">Carbon dioxide saved</string>
+    <string name="carbon_dioxide_saved_format">%.3f kg</string>
+    <string name="calorie_burned">Calorie burned</string>
+    <string name="calorie_burned_format">%d kcal</string>
+    <string name="distance_travelled">Distance travelled</string>
+    <string name="distance_travelled_format">%.2f km</string>
+
+    <!-- Stats -->
+    <string name="previous_day">Previous day</string>
+    <string name="next_day">Next day</string>
+    <string name="step_count">Step count</string>
+    <plurals name="step_count_format">
+        <item quantity="one">%d step</item>
+        <item quantity="other">%d steps</item>
+    </plurals>
+    <string name="tree_collected">Coin collected</string>
+    <string name="trees_collected">Coins collected</string>
+    <plurals name="trees_collected_format">
+        <item quantity="one">%d coin</item>
+        <item quantity="other">%d coins</item>
+    </plurals>
+    <string name="daily_goal_reached">Daily goal reached</string>
+    <string name="details">Details</string>
+    <string name="summary">Summary</string>
+
+    <!-- Preferences -->
+    <string name="settings">Settings</string>
+    <string name="goals">Goals</string>
+    <string name="daily_goal">Daily goal</string>
+    <plurals name="daily_goal_summary">
+        <item quantity="one">%d step</item>
+        <item quantity="other">%d steps</item>
+    </plurals>
+    <string name="advanced">Advanced</string>
+    <string name="step_length">Step length</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="pace">Pace</string>
+    <string-array name="pace_entries">
+        <item>Slow</item>
+        <item>Normal</item>
+        <item>Fast</item>
+    </string-array>
+    <string-array name="pace_values" translatable="false">
+        <item>0.8</item>
+        <item>1</item>
+        <item>1.2</item>
+    </string-array>
+</resources>

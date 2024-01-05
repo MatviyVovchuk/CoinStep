@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".progress.ProgressFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/text_step_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceDisplayMedium"
+            android:textColor="?attr/colorOnSurface"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="3,837" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@string/steps"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textColor="?attr/colorOnSurface"
+            app:layout_constraintBaseline_toBaselineOf="@id/text_step_count"
+            app:layout_constraintStart_toEndOf="@id/text_step_count" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progress_daily_goal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:indicatorColor="?attr/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_step_count"
+            app:trackColor="?attr/colorSurfaceVariant"
+            app:trackCornerRadius="4dp"
+            app:trackThickness="8dp"
+            tools:max="7500"
+            tools:progress="3837" />
+
+        <TextView
+            android:id="@+id/text_daily_goal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="?attr/textAppearanceTitleSmall"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progress_daily_goal"
+            tools:text="Goal 7,500" />
+
+        <ImageView
+            android:id="@+id/image_tree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:adjustViewBounds="true"
+            android:importantForAccessibility="no"
+            android:maxHeight="320dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_daily_goal"
+            tools:src="@drawable/stage_6" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="36dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/image_tree">
+
+            <androidx.cardview.widget.CardView
+                style="@style/Widget.Material3.CardView.Filled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="?attr/colorTertiaryContainer"
+                app:cardCornerRadius="24dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="18dp">
+
+                    <View
+                        android:id="@+id/view_calorie_background"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/shape_circle"
+                        android:backgroundTint="?attr/colorTertiary"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:importantForAccessibility="no"
+                        app:layout_constraintBottom_toBottomOf="@+id/view_calorie_background"
+                        app:layout_constraintEnd_toEndOf="@+id/view_calorie_background"
+                        app:layout_constraintStart_toStartOf="@+id/view_calorie_background"
+                        app:layout_constraintTop_toTopOf="@+id/view_calorie_background"
+                        app:srcCompat="@drawable/local_fire_department_fill0_wght400_grad0_opsz24"
+                        app:tint="?attr/colorOnTertiary" />
+
+                    <TextView
+                        android:id="@+id/text_calorie_burned"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="2dp"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        app:layout_constraintBottom_toTopOf="@+id/text_calorie_burned_label"
+                        app:layout_constraintStart_toEndOf="@+id/view_calorie_background"
+                        app:layout_constraintTop_toTopOf="@+id/view_calorie_background"
+                        app:layout_constraintVertical_chainStyle="packed"
+                        tools:text="210 kcal" />
+
+                    <TextView
+                        android:id="@+id/text_calorie_burned_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/calorie_burned"
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        app:layout_constraintBottom_toBottomOf="@+id/view_calorie_background"
+                        app:layout_constraintStart_toStartOf="@+id/text_calorie_burned"
+                        app:layout_constraintTop_toBottomOf="@+id/text_calorie_burned"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                style="@style/Widget.Material3.CardView.Filled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="?attr/colorPrimaryContainer"
+                app:cardCornerRadius="24dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="18dp">
+
+                    <View
+                        android:id="@+id/view_distance_background"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/shape_circle"
+                        android:backgroundTint="?attr/colorPrimary"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:importantForAccessibility="no"
+                        app:layout_constraintBottom_toBottomOf="@+id/view_distance_background"
+                        app:layout_constraintEnd_toEndOf="@+id/view_distance_background"
+                        app:layout_constraintStart_toStartOf="@+id/view_distance_background"
+                        app:layout_constraintTop_toTopOf="@+id/view_distance_background"
+                        app:srcCompat="@drawable/conversion_path_fill0_wght400_grad0_opsz24"
+                        app:tint="?attr/colorOnPrimary" />
+
+                    <TextView
+                        android:id="@+id/text_distance_travelled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="2dp"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        app:layout_constraintBottom_toTopOf="@+id/text_distance_travelled_label"
+                        app:layout_constraintStart_toEndOf="@+id/view_distance_background"
+                        app:layout_constraintTop_toTopOf="@+id/view_distance_background"
+                        app:layout_constraintVertical_chainStyle="packed"
+                        tools:text="4.1 km" />
+
+                    <TextView
+                        android:id="@+id/text_distance_travelled_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/distance_travelled"
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        app:layout_constraintBottom_toBottomOf="@+id/view_distance_background"
+                        app:layout_constraintStart_toStartOf="@+id/text_distance_travelled"
+                        app:layout_constraintTop_toBottomOf="@+id/text_distance_travelled"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                style="@style/Widget.Material3.CardView.Filled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="?attr/colorSecondaryContainer"
+                app:cardCornerRadius="24dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="18dp">
+
+                    <View
+                        android:id="@+id/view_carbon_dioxide_background"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/shape_circle"
+                        android:backgroundTint="?attr/colorSecondary"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:importantForAccessibility="no"
+                        app:layout_constraintBottom_toBottomOf="@+id/view_carbon_dioxide_background"
+                        app:layout_constraintEnd_toEndOf="@+id/view_carbon_dioxide_background"
+                        app:layout_constraintStart_toStartOf="@+id/view_carbon_dioxide_background"
+                        app:layout_constraintTop_toTopOf="@+id/view_carbon_dioxide_background"
+                        app:srcCompat="@drawable/bubble_chart_fill0_wght400_grad0_opsz24"
+                        app:tint="?attr/colorOnSecondary" />
+
+                    <TextView
+                        android:id="@+id/text_carbon_dioxide_saved"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="2dp"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        app:layout_constraintBottom_toTopOf="@+id/text_carbon_dioxide_saved_label"
+                        app:layout_constraintStart_toEndOf="@+id/view_carbon_dioxide_background"
+                        app:layout_constraintTop_toTopOf="@+id/view_carbon_dioxide_background"
+                        app:layout_constraintVertical_chainStyle="packed"
+                        tools:text="1.43 kg" />
+
+                    <TextView
+                        android:id="@+id/text_carbon_dioxide_saved_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/carbon_dioxide_saved"
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        app:layout_constraintBottom_toBottomOf="@+id/view_carbon_dioxide_background"
+                        app:layout_constraintStart_toStartOf="@+id/text_carbon_dioxide_saved"
+                        app:layout_constraintTop_toBottomOf="@+id/text_carbon_dioxide_saved"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
